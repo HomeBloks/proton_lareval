@@ -4,25 +4,37 @@ This is a Laravel package that provides authentication context functionality usi
 
 ## Installation
 
-1. Run the following command to install the package:
-
+1. Add the following dependency in the composer.json
    ```shell
-   composer require home-bloks/proton-auth-context:dev-main
-   ```
+   "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/phoenixwade/proton_lareval"
+        }
+    ],
 
-2. Run the Proton authentication command:
+    "require": {
+        "home-bloks/proton-auth-context": "dev-main"
+    },
+   ```
+2. Run the following command to add the package in the vendor folder
+   ```shell
+   composer update 
+   ``` 
+
+3. Run the Proton authentication command:
 
    ```shell
    php artisan proton:auth
    ```
 
-3. Install the required npm packages:
+4. Install the required npm packages:
 
    ```shell
    npm install
    ```
 
-4. Compile the assets:
+5. Compile the assets:
 
    ```shell
    npm run dev
@@ -55,7 +67,7 @@ This is a Laravel package that provides authentication context functionality usi
    import ProtonLoginButton from "./components/ProtonLoginButton";
    import { AuthContextProvider } from "./store/auth.context.jsx";
 
-   ReactDOM.createRoot(document.getElementById("protonAuthContext")).render(
+   ReactDOM.createRoot(document.getElementById("root")).render(
      <>
        <AuthContextProvider>
          <ProtonLoginButton />
@@ -76,7 +88,7 @@ This is a Laravel package that provides authentication context functionality usi
 4. Place the following code where you want to add the `ProtonLoginButton` component:
 
    ```html
-   <div id="protonAuthContext"></div>
+   <div id="root"></div>
    ```
 
    You can change the `id` attribute according to your setup in the root JavaScript file.
