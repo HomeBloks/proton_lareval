@@ -35,14 +35,19 @@ This is a Laravel package that provides authentication context functionality usi
    ```
 
 5. Compile the assets:
-
+ <br/>for the development:
    ```shell
    npm run dev
+   ```
+   <br/> OR
+   <br/> for production or server:
+   ```shell
+   npm run build
    ```
 
 ## Configuration for VITE
 
-1. Update your `vite.config.js` file by adding the following code:
+6. Update your `vite.config.js` file by adding the following code:
 
    ```javascript
    import { defineConfig } from 'vite';
@@ -60,7 +65,7 @@ This is a Laravel package that provides authentication context functionality usi
    });
    ```
 
-2. Update your root JavaScript (entry point for react) file (e.g., `App.jsx`, `app.jsx`, `Main.jsx`) with the following code:
+7. Update your root JavaScript (entry point for react) file (e.g., `App.jsx`, `app.jsx`, `Main.jsx`) with the following code:
 
    ```jsx
    import ReactDOM from "react-dom/client";
@@ -76,7 +81,7 @@ This is a Laravel package that provides authentication context functionality usi
    );
    ```
 
-3. Add the following code to your root template header before closing the `</head>` tag (welcome.blade.php by default):
+8. Add the following code to your root template header before closing the `</head>` tag (welcome.blade.php by default):
 
    ```html
    @viteReactRefresh
@@ -85,7 +90,7 @@ This is a Laravel package that provides authentication context functionality usi
 
    Note: Make sure the `@vite('resources/js/app.jsx')` file matches the root JavaScript file you updated.
 
-4. Place the following code where you want to add the `ProtonLoginButton` component:
+9. Place the following code where you want to add the `ProtonLoginButton` component:
 
    ```html
    <div id="root"></div>
@@ -93,7 +98,7 @@ This is a Laravel package that provides authentication context functionality usi
 
    You can change the `id` attribute according to your setup in the root JavaScript file.
    
- 5. update your .env with following varibales:
+ 10. update your .env with following varibales:
    ```
       VITE_MAINNET_ACCOUNT=account_name
       VITE_MAINNET_CHAIN_NETWORK_ENDPOINTS=https://protontestnet.greymass.com
